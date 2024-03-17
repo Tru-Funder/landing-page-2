@@ -1,13 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import * as React from "react";
 import Navigation from "./navigation";
 import { Button } from "@/ui";
+import { usePathname } from "next/navigation";
 
 export interface HeaderProps {}
 
 export default function Header(props: HeaderProps) {
+  const path = usePathname();
   return (
-    <header className={`absolute top-0 w-full z-50 py-6`}>
+    <header
+      className={` ${
+        path === "/" ? "absolute" : "relative bg-[#070F2A]"
+      } top-0 w-full z-50 py-6`}
+    >
       <div
         className={`grid grid-cols-[auto_1fr_auto] items-center justify-items-center custom-container`}
       >
