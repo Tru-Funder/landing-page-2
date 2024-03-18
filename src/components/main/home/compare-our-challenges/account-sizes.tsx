@@ -1,11 +1,9 @@
 "use client";
 
+import React from "react";
 import { ACCOUNT_SIZES } from "@/constants/compare-our-challenges";
-import { TRU_FUNDER_CHALLENGE_TYPES } from "@/constants/trufunder-challenge-types";
 import { RootState } from "@/store/index.store";
 import { setAccountSize } from "@/store/slices/compare-our-challenges";
-import { setTruFunderChallengeType } from "@/store/slices/trufunder-challenge-types";
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function AccountSizes() {

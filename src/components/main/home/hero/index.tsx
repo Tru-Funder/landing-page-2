@@ -9,9 +9,9 @@ export default function Hero() {
       <div className="absolute top-0 left-0 overflow-hidden w-full h-full">
         <Image
           src="/assets/hero-bg.svg"
-          layout="fill"
-          objectFit="cover"
           alt="Hero Section Background Image"
+          fill
+          className="object-cover"
         />
         <span className="block w-full h-full bg-[rgba(8,_15,_46,_0.85)] relative"></span>
       </div>
@@ -41,11 +41,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <span className="block absolute -bottom-32 w-[900px] [box-shadow:_4px_4px_10px_0px_rgba(0,_0,_0,_0.14)] rounded-xl">
+      <span className="block absolute top-[65vh] w-[60vw] [box-shadow:_4px_4px_10px_0px_rgba(0,_0,_0,_0.14)] rounded-xl">
         <Image
           src={"/assets/hero-image.svg"}
-          width={1000}
-          height={1000}
+          width={4000}
+          height={4000}
           alt="TruFunder Dashboard Image"
         />
       </span>

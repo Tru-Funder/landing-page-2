@@ -94,6 +94,7 @@ const config: Config = {
       },
       black: "#001101",
       white: "#ffffff",
+      transparent: "#00000000",
     },
   },
   plugins: [],

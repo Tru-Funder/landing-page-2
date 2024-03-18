@@ -18,7 +18,7 @@ export default function CompareOurChallenges() {
         <div className="max-w-3xl mt-10 mx-auto grid gap-4">
           {/* headers */}
           <div className="grid grid-cols-4 gap-4 py-2 justify-items-center bg-white rounded-3xl">
-            <p className="text-green-600">Account size</p>
+            <p className="text-green-600">Account Type</p>
             <p className="text-green-600">Evaluation</p>
             <p className="text-green-600">Express</p>
             <p className="text-green-600">One-step</p>

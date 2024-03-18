@@ -26,7 +26,7 @@ export default function TrufunderTradingPlatform() {
           </p>
         </div>
 
-        <Button variant="contained">Get Started</Button>
+        <Button variant="contained">Get Funded</Button>
       </div>
     </section>
   );

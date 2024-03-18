@@ -1,10 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import truFunderChallengeTypesSlice from "./slices/trufunder-challenge-types";
 import compareOurChallengesSlice from "./slices/compare-our-challenges";
 
 const reducer = combineReducers({
-  [truFunderChallengeTypesSlice.name]: truFunderChallengeTypesSlice.reducer,
   [compareOurChallengesSlice.name]: compareOurChallengesSlice.reducer,
 });
 

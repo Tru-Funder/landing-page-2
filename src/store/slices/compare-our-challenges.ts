@@ -1,5 +1,4 @@
 import { ACCOUNT_SIZES } from "@/constants/compare-our-challenges";
-import { TRU_FUNDER_CHALLENGE_TYPES } from "@/constants/trufunder-challenge-types";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialStateProps {
