@@ -1,10 +1,9 @@
-import CompareOurChallenges from "@/components/main/home/compare-our-challenges";
-import Hero from "@/components/main/home/hero";
-import JoinCommunity from "@/components/main/join-community";
-import TrufunderTradingPlatform from "@/components/main/home/trufunder-trading-platform";
-import TrustfundChallengeTypes from "@/components/main/home/supported-trading-platforms";
-import React from "react";
-import WhatMakesTruFunderDifferent from "@/components/main/home/what-makes-trufunder-different";
+import CompareOurChallenges from "@/components/home/compare-our-challenges";
+import Hero from "@/components/home/hero";
+import SupportedTradingPlatforms from "@/components/home/supported-trading-platforms";
+import TrufunderTradingPlatform from "@/components/home/trufunder-trading-platform";
+import WhatMakesTruFunderDifferent from "@/components/home/what-makes-trufunder-different";
+import JoinCommunity from "@/components/join-community";
 
 export default function Page() {
   return (
@@ -12,7 +11,7 @@ export default function Page() {
       <Hero />
       <TrufunderTradingPlatform />
       <WhatMakesTruFunderDifferent />
-      <TrustfundChallengeTypes />
+      <SupportedTradingPlatforms />
       <CompareOurChallenges />
       <JoinCommunity />
     </main>

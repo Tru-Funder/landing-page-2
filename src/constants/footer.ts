@@ -6,9 +6,17 @@ export const FOOTER_LINKS = {
   ],
   socials: [
     { alt: "Youtube Icon", icon_url: "/assets/youtube.svg", url: "" },
-    { alt: "Instagram Icon", icon_url: "/assets/instagram.svg", url: "" },
+    {
+      alt: "Instagram Icon",
+      icon_url: "/assets/instagram.svg",
+      url: "https://www.instagram.com/tru.funder?igsh=bnltYTdhdDB2ODY3&utm_source=qr",
+    },
     { alt: "Tiktok Icon", icon_url: "/assets/tiktok.svg", url: "" },
-    { alt: "Twitter Icon", icon_url: "/assets/twitter.svg", url: "" },
+    {
+      alt: "Twitter Icon",
+      icon_url: "/assets/twitter.svg",
+      url: "https://x.com/thetrufunder?s=21",
+    },
   ],
   importantLinks: [
     { title: "Affiliate Partner", url: "" },

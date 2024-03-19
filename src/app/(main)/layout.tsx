@@ -1,8 +1,5 @@
-import Footer from "@/components/main/footer";
-import Header from "@/components/main/header";
-import Hero from "@/components/main/home/hero";
-import TrufunderTradingPlatform from "@/components/main/home/trufunder-trading-platform";
-import TrustfundChallengeTypes from "@/components/main/home/supported-trading-platforms";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import React from "react";
 
 interface MainLayoutProps {

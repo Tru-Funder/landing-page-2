@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function JoinCommunity() {
@@ -46,17 +47,19 @@ export default function JoinCommunity() {
             <p>Don’t trade in isolation. Join our Discord Community.</p>
           </div>
 
-          <button className="grid grid-flow-col gap-2 rounded-md px-6 py-3 items-center text-xl font-bold bg-[#646465] mx-auto mt-10">
-            <span className="block relative w-16">
-              <Image
-                src={"/assets/discord.svg"}
-                width={1000}
-                height={1000}
-                alt="Discord Icon"
-              />
-            </span>
-            <span className="max-w-40">JOIN DISCORD COMMUNITY</span>
-          </button>
+          <Link href={"https://discord.gg/M73gWMTU"} target="_blank">
+            <button className="grid grid-flow-col gap-2 rounded-md px-6 py-3 items-center text-xl font-bold bg-[#646465] mx-auto mt-10">
+              <span className="block relative w-16">
+                <Image
+                  src={"/assets/discord.svg"}
+                  width={1000}
+                  height={1000}
+                  alt="Discord Icon"
+                />
+              </span>
+              <span className="max-w-40">JOIN DISCORD COMMUNITY</span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

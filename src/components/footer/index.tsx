@@ -25,7 +25,9 @@ export default function Footer() {
               <ul className="grid gap-1">
                 {FOOTER_LINKS.contacts.map((link, i) => (
                   <li key={i}>
-                    <Link href={link.url}>{link.title}</Link>
+                    <Link href={link.url} target="_blank">
+                      {link.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -36,7 +38,7 @@ export default function Footer() {
               <h3 className="text-2xl font-bold">Follow Us On</h3>
               <div className="grid grid-flow-col w-max gap-5">
                 {FOOTER_LINKS.socials.map((link, i) => (
-                  <Link key={i} href={link.url}>
+                  <Link key={i} href={link.url} target="_blank">
                     <span
                       className={`relative block w-8 ${
                         link.alt === "Tiktok Icon" && "bg-white rounded-md"
@@ -61,7 +63,9 @@ export default function Footer() {
             <ul className="grid gap-1">
               {FOOTER_LINKS.importantLinks.map((link, i) => (
                 <li key={i}>
-                  <Link href={link.url}>{link.title}</Link>
+                  <Link href={link.url} target="_blank">
+                    {link.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -73,7 +77,9 @@ export default function Footer() {
             <ul className="grid gap-1">
               {FOOTER_LINKS.models.map((link, i) => (
                 <li key={i}>
-                  <Link href={link.url}>{link.title}</Link>
+                  <Link href={link.url} target="_blank">
+                    {link.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -85,7 +91,9 @@ export default function Footer() {
             <ul className="grid gap-1">
               {FOOTER_LINKS.community.map((link, i) => (
                 <li key={i}>
-                  <Link href={link.url}>{link.title}</Link>
+                  <Link href={link.url} target="_blank">
+                    {link.title}
+                  </Link>
                 </li>
               ))}
             </ul>

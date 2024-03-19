@@ -1,4 +1,4 @@
-import Challenges from "@/components/main/challenges";
+import Challenges from "@/components/challenges";
 import React, { Suspense } from "react";
 
 export default function Page() {
