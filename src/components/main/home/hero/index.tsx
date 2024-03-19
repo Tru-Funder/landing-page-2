@@ -1,4 +1,4 @@
-import { Button, ICONS, Icon } from "@/ui";
+import { Button } from "@/ui";
 import Image from "next/image";
 import React from "react";
 
@@ -35,7 +35,14 @@ export default function Hero() {
         <div className={`grid grid-flow-col gap-6 w-max mx-auto`}>
           <Button variant="contained">Get Funded</Button>
           <Button variant="outlined">
-            <Icon types={ICONS.Discord} size={23} color="#008905" />
+            <span className="block relative w-6">
+              <Image
+                src={"/assets/green-white-discord.svg"}
+                width={1000}
+                height={1000}
+                alt="Discord Icon"
+              />
+            </span>{" "}
             Join Our Discord
           </Button>
         </div>

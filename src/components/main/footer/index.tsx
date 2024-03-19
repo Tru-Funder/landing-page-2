@@ -22,7 +22,7 @@ export default function Footer() {
             {/* Contacts */}
             <div className="grid gap-2">
               <h3 className="text-2xl font-bold">Contacts</h3>
-              <ul>
+              <ul className="grid gap-1">
                 {FOOTER_LINKS.contacts.map((link, i) => (
                   <li key={i}>
                     <Link href={link.url}>{link.title}</Link>
@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Important Links */}
           <div className="grid gap-2">
             <h3 className="text-2xl font-bold">Important Links</h3>
-            <ul>
+            <ul className="grid gap-1">
               {FOOTER_LINKS.importantLinks.map((link, i) => (
                 <li key={i}>
                   <Link href={link.url}>{link.title}</Link>
@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Models */}
           <div className="grid gap-2">
             <h3 className="text-2xl font-bold">Models</h3>
-            <ul>
+            <ul className="grid gap-1">
               {FOOTER_LINKS.models.map((link, i) => (
                 <li key={i}>
                   <Link href={link.url}>{link.title}</Link>
@@ -82,7 +82,7 @@ export default function Footer() {
           {/* Community */}
           <div className="grid gap-2">
             <h3 className="text-2xl font-bold">Community</h3>
-            <ul>
+            <ul className="grid gap-1">
               {FOOTER_LINKS.community.map((link, i) => (
                 <li key={i}>
                   <Link href={link.url}>{link.title}</Link>
