@@ -1,64 +1,49 @@
+import { Button } from "@/ui";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function JoinCommunity() {
   return (
-    <section className="bg-[#070E2A] py-24">
-      <div className="custom-container relative">
-        {/* Background Images */}
-        <span className="w-52 absolute bottom-0 left-0">
-          <Image
-            src="/assets/a-group-of-cheerful-young-people.svg"
-            width={1000}
-            height={1000}
-            alt=""
-          />
-        </span>
+    <section className="bg-[linear-gradient(108.71deg,_#070E2A_22.91%,_#04421B_53.34%,_#035714_70.46%,_#016F0D_78.06%,_#008905_86.3%)] py-10 relative layout-space">
+      {/* Background Images */}
+      <span className="w-[600px] block absolute -left-[300px] top-1/2 -translate-y-1/2 opacity-30">
+        <Image
+          src="/assets/bg-cardano.png"
+          width={1000}
+          height={1000}
+          alt="bg image"
+        />
+      </span>
 
-        <span className="w-[200px] absolute bottom-0 left-1/2 -translate-x-1/2">
-          <Image
-            src="/assets/man-sitting-with-laptop-and-working.svg"
-            width={1000}
-            height={1000}
-            alt=""
-          />
-        </span>
-
-        <span className="w-[340px] absolute top-0 right-0">
-          <Image
-            src="/assets/young-women-taking-a-selfie.svg"
-            width={1000}
-            height={1000}
-            alt=""
-          />
-        </span>
-
+      <div className="custom-container relative bg-[linear-gradient(304.59deg,_#008905_13.88%,_rgba(0,_35,_1,_0)_49.25%)] shadow-[0px_4px_22px_0px_#00000080] rounded-2xl p-[2px]">
         {/* Content */}
-        <div className="text-white relative">
-          <div className="text-center text-2xl bg-[rgba(245,_245,_245,_0.13)] grid justify-items-center gap-8 max-w-5xl mx-auto py-24 px-6 rounded-2xl">
-            <h2 className="text-5xl font-bold max-w-3xl">
-              Join the Global Community for Traders, by the Traders
-            </h2>
-            <p className="max-w-2xl">
-              Start your journey to financial trading success with Trufunder,its
-              is in our sole interest and profit that you become successful.
-            </p>
-            <p>Don’t trade in isolation. Join our Discord Community.</p>
-          </div>
+        <div className="text-center text-xl text-white bg-[rgba(7,_14,_42,0.5)] grid justify-items-center gap-8 mx-auto py-10 px-6 rounded-2xl">
+          <h2 className="text-4xl font-bold max-w-3xl">
+            Join our community built just for you
+          </h2>
+          <p className="max-w-2xl">
+            Start your journey to financial trading success with Trufunder,its
+            is in our sole interest and profit that you become successful.
+          </p>
+          <p>Don’t trade in isolation. Join our Discord Community.</p>
 
-          <Link href={"https://discord.gg/M73gWMTU"} target="_blank">
-            <button className="grid grid-flow-col gap-2 rounded-md px-6 py-3 items-center text-xl font-bold bg-[#646465] mx-auto mt-10">
-              <span className="block relative w-16">
+          <Link
+            href={"https://discord.gg/M73gWMTU"}
+            target="_blank"
+            className="mt-8"
+          >
+            <Button variant="contained" className="text-lg gap-3 py-4">
+              <span className="block relative w-10">
                 <Image
-                  src={"/assets/discord.svg"}
+                  src={"/assets/discord-white-green.png"}
                   width={1000}
                   height={1000}
                   alt="Discord Icon"
                 />
               </span>
-              <span className="max-w-40">JOIN DISCORD COMMUNITY</span>
-            </button>
+              <span className="">JOIN DISCORD COMMUNITY</span>
+            </Button>
           </Link>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import { FOOTER_LINKS } from "@/constants/footer";
+import { SOCIALS } from "@/constants/socials";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#070E2A] mt-3 py-16">
+    <footer className="bg-[#070E2A] mt-1 py-16">
       <div className="custom-container grid gap-10">
         <span className="block relative w-40">
           <Image
@@ -37,7 +38,7 @@ export default function Footer() {
             <div className="grid gap-2">
               <h3 className="text-2xl font-bold">Follow Us On</h3>
               <div className="grid grid-flow-col w-max gap-5">
-                {FOOTER_LINKS.socials.map((link, i) => (
+                {SOCIALS.map((link, i) => (
                   <Link key={i} href={link.url} target="_blank">
                     <span
                       className={`relative block w-8 ${

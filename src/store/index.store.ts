@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import compareOurChallengesSlice from "./slices/compare-our-challenges";
+import challengesSlice from "./slices/compare-our-challenges";
 
 const reducer = combineReducers({
-  [compareOurChallengesSlice.name]: compareOurChallengesSlice.reducer,
+  [challengesSlice.name]: challengesSlice.reducer,
 });
 
 const middleware: any = (getDefaultMiddleware: any) => [

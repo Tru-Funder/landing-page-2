@@ -1,25 +1,36 @@
-import { ACCOUNT_SIZES } from "@/constants/compare-our-challenges";
+import { CHALLENGES } from "@/constants/compare-our-challenges";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialStateProps {
-  data: string;
+  data: {
+    accountType: number;
+    accountSize: number;
+  };
 }
 
 const initialState: InitialStateProps = {
-  data: ACCOUNT_SIZES[0].title,
+  data: {
+    accountType: 0,
+    accountSize: 0,
+  },
 };
 
-const compareOurChallengesSlice = createSlice({
-  name: "compareOurChallengesSlice",
+const challengesSlice = createSlice({
+  name: "challengesSlice",
   initialState,
   reducers: {
+    setAccountType: (state, action) => ({
+      ...state,
+      data: { ...state.data, accountType: action.payload },
+    }),
+
     setAccountSize: (state, action) => ({
       ...state,
-      data: action.payload,
+      data: { ...state.data, accountSize: action.payload },
     }),
   },
 });
 
-export const { setAccountSize } = compareOurChallengesSlice.actions;
+export const { setAccountType, setAccountSize } = challengesSlice.actions;
 
-export default compareOurChallengesSlice;
+export default challengesSlice;

@@ -4,8 +4,8 @@ export const NAVIGATIONS = [
     url: "/",
   },
   {
-    title: "Challenges",
-    url: "/challenges",
+    title: "Models",
+    url: "/models",
   },
   {
     title: "Help Center",

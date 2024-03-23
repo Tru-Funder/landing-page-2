@@ -30,6 +30,10 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.layout-space {
+  @apply px-5 md:px-10;
+}
+
 /* .custom-scroll-bar::-webkit-scrollbar {
   @apply w-1 h-1 rounded-full bg-grey-light;
 }
@@ -39,6 +43,6 @@ input[type="number"] {
 
 @layer utilities {
   .custom-container {
-    @apply container mx-auto;
+    @apply container max-w-7xl mx-auto;
   }
 }
