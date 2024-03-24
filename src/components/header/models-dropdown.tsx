@@ -12,7 +12,9 @@ export default function ModelsDropdown() {
   const [isScroll, setIsScroll] = useState(false);
 
   const activeLinkClass =
-    path === "/models" ? "text-green-300" : "text-white hover:text-green-100";
+    path === "models"
+      ? "text-white bg-green-300 py-3 px-4 rounded-md lg:p-0 lg:bg-transparent lg:text-green-300"
+      : "text-white rounded-md hover:py-3 hover:px-4 lg:hover:p-0 hover:bg-green-300 lg:hover:bg-transparent lg:hover:text-green-100";
 
   const handleToggleDropDowm = () => {
     setIsDropDown(!isDropDown);
@@ -33,7 +35,10 @@ export default function ModelsDropdown() {
     <div>
       <button
         onClick={handleToggleDropDowm}
-        className={`transiton-all ${activeLinkClass}`}
+        className={`transiton-all w-full text-left ${activeLinkClass} ${
+          isDropDown &&
+          "py-3 px-4 rounded-md lg:p-0 bg-green-300 lg:bg-transparent"
+        }`}
       >
         Models
       </button>
@@ -41,14 +46,14 @@ export default function ModelsDropdown() {
       <div className={`${isScroll ? "hidden" : "block"}`}>
         {/* dark bg */}
         <div
-          className={`fixed w-screen h-screen top-20 left-0 bg-[rgba(0,0,0,0.8)] z-10 transition-all ${
+          className={`fixed hidden lg:block w-screen h-screen top-20 left-0 bg-[rgba(0,0,0,0.8)] z-10 transition-all ${
             isDropDown ? "visible" : "invisible"
           }`}
         ></div>
 
         <div
-          className={`w-48 fixed z-20 top-20 bg-[#070F2A] text-white transition-all overflow-hidden duration-300 ${
-            isDropDown ? "max-h-96" : "max-h-0"
+          className={`lg:w-48 lg:fixed z-20 top-20 bg-[rgba(0,0,0,0.2)] rounded-md lg:rounded-none lg:mt-0 lg:bg-[#070F2A] text-white transition-all overflow-hidden duration-300 ${
+            isDropDown ? "max-h-96 mt-5 " : "max-h-0 m-0"
           }`}
         >
           <Link

@@ -14,7 +14,7 @@ export default function Page() {
       <WhatMakesTruFunderDifferent />
       <TrufunderChallengeTypes />
       <CompareOurChallenges />
-      <TradeOurProducts />
+      {/* <TradeOurProducts /> */}
       <JoinCommunity />
     </main>
   );

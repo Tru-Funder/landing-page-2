@@ -18,9 +18,9 @@ export default function Header(props: HeaderProps) {
       } top-0 w-full z-50 py-6`}
     >
       <div
-        className={`grid items-center justify-items-center relativ custom-container grid-cols-[1fr_auto] lg:grid-cols-[auto_1fr_auto]`}
+        className={`grid items-center grid-flow-col justify-between relativ custom-container`}
       >
-        <span className="block relative w-40">
+        <span className="block relative w-44">
           <Image
             src={"/assets/logo-colored.svg"}
             width={200}
@@ -34,7 +34,9 @@ export default function Header(props: HeaderProps) {
           <Navigation />
         </React.Suspense>
 
-        <MobileNavigation />
+        <React.Suspense>
+          <MobileNavigation />
+        </React.Suspense>
 
         <Button variant="contained" className="hidden lg:grid">
           Client Area

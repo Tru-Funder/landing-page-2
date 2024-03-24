@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#070E2A] mt-1 py-16">
+    <footer className="bg-[#070E2A] mt-1 py-16 layout-space">
       <div className="custom-container grid gap-10">
         <span className="block relative w-40">
           <Image
@@ -17,7 +17,7 @@ export default function Footer() {
           />
         </span>
 
-        <div className="text-white grid grid-flow-col items-start">
+        <div className="text-white grid xs:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
           {/* Contacts and Socials */}
           <div className="grid gap-10">
             {/* Contacts */}

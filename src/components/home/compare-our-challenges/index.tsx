@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function CompareOurChallenges() {
   return (
-    <section className="bg-[#070E2A] py-36 relative layout-space overflow-hidden">
+    <section className="bg-[#070E2A] pt-10 lg:pt-20 pb-20 lg:pb-36 relative layout-space overflow-hidden">
       {/* Background Images */}
       <span className="absolute w-40 block -right-28 bottom-64 opacity-60">
         <Image
@@ -42,16 +42,16 @@ export default function CompareOurChallenges() {
       </span>
 
       <div className="custom-container relative">
-        <h2 className="text-5xl font-bold text-white text-center">
+        <h2 className="text-3xl lg:text-5xl font-bold text-white text-center">
           <span className="text-yellow-600">Compare</span> Our Challenges
         </h2>
 
-        <div className="grid grid-cols-[1fr_auto] gap-5 mt-20">
-          <div className="grid gap-5 content-start">
+        <div className="grid xl:grid-cols-[1fr_auto] gap-5 mt-10 lg:mt-20">
+          <div className="grid gap-10 content-start">
             <SelectAccountType />
             <SelectAccountSize />
 
-            <div className="grid grid-flow-col gap-5">
+            <div className="grid sm:grid-flow-col gap-5">
               <EvaluationTradingChallenge />
               <EvaluationVerification />
               <ExpressTradingChallenge />
@@ -60,16 +60,18 @@ export default function CompareOurChallenges() {
             </div>
           </div>
 
-          <div className="w-max grid gap-5 grid-rows-[1fr_auto] pt-12">
+          <div className="w-full lg:w-max grid gap-5 grid-rows-[1fr_auto] xl:pt-12">
             <Platforms />
             <RegistrationFee />
           </div>
         </div>
 
-        <div className="grid grid-flow-col w-max gap-2 text-white mt-10">
+        <div className="grid xs:grid-flow-col text-sm xs:text-bse w-max gap-2 text-white mt-10">
           <p className="font-bold text-yellow-500">Note:</p>
-          <p className="border-r border-white pr-2">First payout - 14 days</p>
-          <p>Second payout - 7 days</p>
+          <div className="grid grid-flow-col w-max gap-2">
+            <p className="border-r border-white pr-2">First payout - 14 days</p>
+            <p>Second payout - 7 days</p>
+          </div>
         </div>
       </div>
     </section>

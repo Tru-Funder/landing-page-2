@@ -24,7 +24,9 @@ export default function SelectAccountType() {
 
   return (
     <div className="grid gap-3">
-      <h3 className="font-semibold text-white text-3xl">Select account type</h3>
+      <h3 className="font-semibold text-white text-2xl lg:text-3xl">
+        Select account type
+      </h3>
       <div className="grid grid-flow-col bg-[#E6F3E6]">
         {CHALLENGES.map((challenge, i) => (
           <button

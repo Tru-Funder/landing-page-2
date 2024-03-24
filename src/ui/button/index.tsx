@@ -28,7 +28,7 @@ export function Button({
 
   return (
     <button
-      className={`px-6 py-2 rounded-xl font-semibold transition-all grid grid-flow-col w-max items-center gap-2 ${variantClass} ${className}`}
+      className={`px-6 py-2 rounded-xl font-semibold transition-all grid grid-flow-col justify-center items-center gap-2 ${variantClass} ${className}`}
       disabled={disabled}
       onClick={onClick}
       type={type}

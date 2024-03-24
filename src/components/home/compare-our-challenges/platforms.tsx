@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Platforms() {
   return (
-    <div className="w-80 rounded-2xl bg-[#131B35] p-10 grid gap-5 content-center">
+    <div className="w-full rounded-2xl bg-[#131B35] p-10 grid gap-5 content-center justify-center order-1 xl:order-none">
       <p className="text-white font-medium text-2xl pb-5 border-b border-[#E6F3E6]">
         Choose Your Platform
       </p>

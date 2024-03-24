@@ -8,8 +8,8 @@ export const NAVIGATIONS = [
     url: "/models",
   },
   {
-    title: "Help Center",
-    url: "/help-center",
+    title: "FAQ",
+    url: "/faq",
   },
   {
     title: "About US",

@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className={`h-screen relative grid pt-20 layout-space`}>
+    <section className={`min-h-screen relative grid pt-20 layout-space`}>
       {/* Background Image */}
       <div className="absolute top-0 left-0 overflow-hidden w-full h-full">
         <Image
@@ -19,10 +19,10 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative grid grid-rows-[1fr_auto] items-center text-white custom-container">
-        <div className="grid grid-cols-[1fr_auto] gap-10 items-center">
+      <div className="relative grid grid-rows-[1fr_auto] items-center text-white custom-container py-10">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
           <div>
-            <div className=" grid grid-flow-col items-center w-max bg-[linear-gradient(89deg,_rgba(21,_22,_38,_0.60)_0%,_rgba(109,_62,_64,_0.70)_100%)] rounded-md">
+            <div className="grid grid-flow-col items-center lg:w-max max-w-lg mx-auto lg:mx-0 bg-[linear-gradient(89deg,_rgba(21,_22,_38,_0.60)_0%,_rgba(109,_62,_64,_0.70)_100%)] rounded-md">
               <span className="block relative w-12">
                 <Image
                   src={"/assets/icons/yellow-bg-arrow.svg"}
@@ -36,22 +36,31 @@ export default function Hero() {
               </p>
             </div>
 
-            <h1 className="text-6xl font-semibold mt-8">
+            <h1 className="text-5xl text-center mx-auto lg:mx-0 lg:text-left lg:text-6xl max-w-lg font-semibold mt-8">
               Unleashing Your <span className="text-yellow-500">Trading</span>{" "}
               Potentials
             </h1>
 
-            <div className="grid grid-flow-col w-max gap-5 mt-12">
-              <Button variant="contained">Get Funded</Button>
-              <Button>
-                <span></span>
+            <div className="grid lg:grid-flow-col gap-5 mt-12 max-w-lg mx-auto lg:mx-0">
+              <Button variant="contained" className="py-3">
+                Get Funded
+              </Button>
+              <Button className="py-3">
+                <span className="block relative w-8">
+                  <Image
+                    src={"/assets/discord-green-white.png"}
+                    width={50}
+                    height={50}
+                    alt="Discord Logo"
+                  />
+                </span>{" "}
                 Join Our Discord
               </Button>
             </div>
           </div>
 
-          <div className="bg-[rgba(255,_255,_255,_0.17)] shadow-[0px_4px_22.8px_0px_rgba(0,_0,_0,_0.25)] rounded-2xl p-6 grid gap-6">
-            <span className="block relative w-96 shadow-[0px_10px_20.1px_0px_rgba(0,_0,_0,_0.50)] rounded-2xl">
+          <div className="bg-[rgba(255,_255,_255,_0.17)] shadow-[0px_4px_22.8px_0px_rgba(0,_0,_0,_0.25)] w-full max-w-max lg:w-max mx-auto rounded-2xl p-6 grid gap-6">
+            <span className="block relative w-full lg:w-96  shadow-[0px_10px_20.1px_0px_rgba(0,_0,_0,_0.50)] rounded-2xl">
               <Image
                 src={"/assets/hero-img.png"}
                 width={500}
@@ -86,7 +95,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="grid grid-flow-col justify-between gap-10 py-10 text-lg">
+        <div className="hidden lg:grid grid-flow-col justify-between gap-10 text-lg">
           <p className="max-w-72">
             We give <span className="font-bold">newbies</span> the opportunity
             of veteran traders
