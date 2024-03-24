@@ -9,11 +9,16 @@ import React from "react";
 export default function Page() {
   return (
     <main>
-      <MeetTheTeam />
+      <div className="bg-[#070F2A] layout-space py-40 grid place-content-center">
+        <h2 className="text-green-500 text-4xl sm:text-6xl lg:text-7xl font-semibold">
+          Coming Soon !!!
+        </h2>
+      </div>
+      {/* <MeetTheTeam />
       <OurMissionAndVision />
       <OurCoreValues />
       <FinancialFreedom />
-      <ConquerTheMarkets />
+      <ConquerTheMarkets /> */}
       <JoinCommunity />
     </main>
   );

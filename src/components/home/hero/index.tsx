@@ -13,7 +13,7 @@ export default function Hero() {
           src="/assets/hero-bg.png"
           alt="Hero Section Background Image"
           fill
-          className="object-fill"
+          className="object-cover lg:object-fill"
         />
         <span className="block w-full h-full bg-[linear-gradient(180deg,_rgba(7,_14,_42,_0.60)_0%,_rgba(0,_0,_0,_0.60)_100%)] relative"></span>
       </div>
