@@ -5,9 +5,9 @@ import React from "react";
 
 export default function OneStep() {
   return (
-    <section className="bg-[#070F2A] py-24">
+    <section className="bg-[#070F2A] py-10 md:py-24 layout-space">
       <div className="custom-container grid gap-16">
-        <h2 className="text-white font-bold text-3xl">
+        <h2 className="text-white font-bold text-3xl text-center xs:text-left">
           <span className="text-yellow-300 text-5xl">One Step</span> Challenge
         </h2>
         <span className="block relative w-64 mx-auto">
@@ -19,7 +19,7 @@ export default function OneStep() {
           />
         </span>
 
-        <div className="text-white grid gap-10 text-xl">
+        <div className="text-white grid gap-10 text-lg sm:text-xl">
           <p>
             Transition from being a lucky trader to a skillful, strategic one
             with Trufunder&apos;s One-Step Account challenge. This innovative
@@ -53,7 +53,7 @@ export default function OneStep() {
           View Challenge Stats
         </Button>
 
-        <div className="grid grid-flow-col justify-between">
+        <div className="grid grid-flow-col justify-between text-sm sm:text-base">
           <Link
             href={"/models?activeTab=express"}
             className="text-white decoration-dashed underline"

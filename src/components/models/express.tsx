@@ -5,12 +5,12 @@ import React from "react";
 
 export default function Express() {
   return (
-    <section className="bg-[#070F2A] py-24">
+    <section className="bg-[#070F2A] py-10 md:py-24 layout-space">
       <div className="custom-container grid gap-16">
-        <h2 className="text-white font-bold text-3xl">
+        <h2 className="text-white font-bold text-3xl text-center xs:text-left">
           <span className="text-yellow-300 text-5xl">Express</span> Challenge
         </h2>
-        <span className="block relative w-64 mx-auto">
+        <span className="block relative w-36 sm:w-64 mx-auto">
           <Image
             src={
               "/assets/man-holding-money-in-front-of-a-growing-bitcoin-graph.png"
@@ -21,7 +21,7 @@ export default function Express() {
           />
         </span>
 
-        <div className="text-white grid gap-10 text-xl">
+        <div className="text-white grid gap-10 text-lg sm:text-xl">
           <p>
             Direct Funding for Rapid Profit Generation With our Express Trading
             Account Challenge, you can bypass lengthy evaluation phases and
@@ -54,7 +54,7 @@ export default function Express() {
           View Challenge Stats
         </Button>
 
-        <div className="grid grid-flow-col justify-between">
+        <div className="grid grid-flow-col justify-between text-sm sm:text-base">
           <Link
             href={"/models?activeTab=evaluation"}
             className="text-white decoration-dashed underline"

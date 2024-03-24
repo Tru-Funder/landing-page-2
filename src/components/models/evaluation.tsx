@@ -5,12 +5,13 @@ import React from "react";
 
 export default function Evaluation() {
   return (
-    <section className="bg-[#070F2A] py-24">
+    <section className="bg-[#070F2A] py-10 md:py-24 layout-space">
       <div className="custom-container grid gap-16">
-        <h2 className="text-white font-bold text-3xl">
+        <h2 className="text-white font-bold text-3xl text-center xs:text-left">
           <span className="text-yellow-300 text-5xl">Evaluation</span> Challenge
         </h2>
-        <span className="block relative w-64 mx-auto">
+
+        <span className="block relative w-32 sm:w-64 mx-auto">
           <Image
             src={"/assets/phone-with-arrow-money-stars.png"}
             width={1000}
@@ -19,7 +20,7 @@ export default function Evaluation() {
           />
         </span>
 
-        <div className="text-white grid gap-10 text-xl">
+        <div className="text-white grid gap-10 text-lg sm:text-xl">
           <p>
             Introducing Trufunder&apos;s 2-Step Evaluation Account Challenge:
             Your Path to Trading Mastery Are you ready to take your trading
