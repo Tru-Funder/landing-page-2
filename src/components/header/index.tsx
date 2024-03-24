@@ -6,6 +6,7 @@ import { Button } from "@/ui";
 import { usePathname } from "next/navigation";
 import MobileNavigation from "./mobile-navigation";
 import Navigation from "./navigation";
+import JoinWhiteList from "../join-whitelist";
 
 export interface HeaderProps {}
 
@@ -42,6 +43,8 @@ export default function Header(props: HeaderProps) {
           Client Area
         </Button>
       </div>
+
+      <JoinWhiteList />
     </header>
   );
 }
