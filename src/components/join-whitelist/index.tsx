@@ -1,5 +1,6 @@
 import { Button } from "@/ui";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function JoinWhiteList() {
@@ -63,9 +64,16 @@ export default function JoinWhiteList() {
               discount on our presale launch which is only open to 200 people
               within the next 96 hours
             </p>
-            <Button variant="contained" className="mt-5 sm:mt-10 py-3 px-8">
-              Join WhiteList
-            </Button>
+
+            <Link href="/whitelist-registration">
+              <Button
+                onClick={() => setIsPopUp(false)}
+                variant="contained"
+                className="mt-5 sm:mt-10 py-3 px-8"
+              >
+                Join WhiteList
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
