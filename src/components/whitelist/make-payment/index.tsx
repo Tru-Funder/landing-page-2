@@ -5,11 +5,18 @@ import { RootState } from "@/store/index.store";
 import { Button } from "@/ui";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function MakePayment() {
+  const router = useRouter();
+
   const [paymentMethod, setPaymentMethod] = useState<Record<string, any>>({});
+
+  const userId = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userId
+  );
 
   const method = useSelector(
     (state: RootState) => state.wihtelistSlice.data.paymentMethod
@@ -24,6 +31,10 @@ export default function MakePayment() {
   };
 
   useEffect(() => {
+    if (!userId) {
+      router.push("/whitelist");
+    }
+
     Object.entries(PAYMENT_METHODS).map(
       ([key, value]) => value.coin === method && setPaymentMethod(value)
     );
@@ -37,9 +48,11 @@ export default function MakePayment() {
           <p className="text-center text-[#E6F3E680]">
             Copy the payment address is below
           </p>
-          <div className="grid grid-flow-col w-max mx-auto gap-2 items-center">
+          <div className="grid justify-items-center sm:grid-flow-col sm:w-max mx-auto gap-2 items-center">
             <p className="font-bold">{paymentMethod.coin}:</p>
-            <p>{paymentMethod.address}</p>
+            <p className="break-words text-center overflow-x-hidden w-full">
+              {paymentMethod.address}
+            </p>
 
             <button
               onClick={() => handleCopy(paymentMethod.address)}
@@ -62,9 +75,9 @@ export default function MakePayment() {
               placeholder="Address you are sending from *"
               name="address"
               required
-              className="w-full py-4 text-lg sm:text-xl text-[#E6F3E6] bg-transparent outline-none border-b border-green-300 placeholder:text-[#E6F3E6] placeholder:opacity-50"
+              className="w-full py-4 sm:text-lg text-[#E6F3E6] bg-transparent outline-none border-b border-green-300 placeholder:text-[#E6F3E6] placeholder:opacity-50"
             />
-            <p className="text-[#E6F3E680] mt-2">
+            <p className="text-[#E6F3E680] mt-2 text-sm sm:text-base">
               Sender’s address is compulsory to verify sender and payment.
             </p>
           </div>
@@ -74,7 +87,7 @@ export default function MakePayment() {
           <div className="grid grid-flow-col justify-between">
             <p className="text-[#E6F3E680]">Payment amount</p>
             <p className="text-xl font-semibold">
-              ${parseInt(acountSize.registrationFee.split("$").join("")) / 2}{" "}
+              ${parseInt(acountSize.registrationFee?.split("$").join("")) / 2}{" "}
               USD
             </p>
           </div>

@@ -21,12 +21,12 @@ export default function PreferredTradingPlatform() {
         required
         className="hidden"
       />
-      <div className="grid lg:grid-flow-col gap-5 lg:gap-12 xl:gap-20 mt-5 sm:text-xl">
-        <div className="grid grid-flow-col w-max items-center gap-5">
+      <div className="grid lg:grid-cols-3 lg:w-max gap-5 lg:gap-12 mt-5 sm:text-xl">
+        <div className="grid grid-cols-[auto_1fr] items-center gap-5">
           <button
             type="button"
             onClick={() => setSelectedPlatform("MT4")}
-            className="block w-7 h-7 rounded-full bg-white border-2 border-green-300 p-1"
+            className="block w-6 h-6 rounded-full bg-white border-2 border-green-300 p-1"
           >
             <span
               className={`w-full h-full rounded-full block ${
@@ -34,8 +34,8 @@ export default function PreferredTradingPlatform() {
               }`}
             ></span>
           </button>
-          <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-3 px-4 bg-[#B0DAB2] font-medium items-center gap-4">
-            <span className="block relative w-8">
+          <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 text-sm bg-[#B0DAB2] font-medium items-center gap-2">
+            <span className="block relative w-6">
               <Image
                 src={"/assets/meta-trader-4.png"}
                 width={100}
@@ -47,11 +47,11 @@ export default function PreferredTradingPlatform() {
           </div>
         </div>
 
-        <div className="grid grid-flow-col w-max items-center gap-5">
+        <div className="grid grid-cols-[auto_1fr] items-center gap-5">
           <button
             type="button"
             onClick={() => setSelectedPlatform("MT5")}
-            className="block w-7 h-7 rounded-full bg-white border-2 border-green-300 p-1"
+            className="block w-6 h-6 rounded-full bg-white border-2 border-green-300 p-1"
           >
             <span
               className={`w-full h-full rounded-full block ${
@@ -59,8 +59,8 @@ export default function PreferredTradingPlatform() {
               }`}
             ></span>
           </button>
-          <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-3 px-4 bg-[#FED202] font-medium items-center gap-4">
-            <span className="block relative w-8">
+          <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 text-sm bg-[#FED202] font-medium items-center gap-2">
+            <span className="block relative w-6">
               <Image
                 src={"/assets/meta-trader-5.png"}
                 width={100}
@@ -72,11 +72,11 @@ export default function PreferredTradingPlatform() {
           </div>
         </div>
 
-        <div className="grid grid-flow-col w-max items-center gap-5">
+        <div className="grid grid-cols-[auto_1fr] items-center gap-5">
           <button
             type="button"
             onClick={() => setSelectedPlatform("CT")}
-            className="block w-7 h-7 rounded-full bg-white border-2 border-green-300 p-1"
+            className="block w-6 h-6 rounded-full bg-white border-2 border-green-300 p-1"
           >
             <span
               className={`w-full h-full rounded-full block ${
@@ -84,8 +84,8 @@ export default function PreferredTradingPlatform() {
               }`}
             ></span>
           </button>
-          <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-3 px-4 bg-[#2F61DF] text-white font-medium items-center gap-4">
-            <span className="block relative w-8">
+          <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 text-sm bg-[#2F61DF] text-white font-medium items-center gap-2">
+            <span className="block relative w-6">
               <Image
                 src={"/assets/c-trader.png"}
                 width={100}

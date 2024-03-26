@@ -22,7 +22,7 @@ export default function PaymentMethods() {
   }, []);
 
   return (
-    <div className="w-full bg-[#131B35] p-10 grid gap-10 rounded-xl relative">
+    <div className="w-full bg-[#131B35] p-6 xs:p-10 grid gap-10 rounded-xl relative order-1 lg:order-none">
       <h3 className="text-[#E6F3E680] text-2xl">Payment Methods</h3>
 
       <div className="grid gap-5">

@@ -7,12 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function AccountSize() {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const accountSize = useSelector(
     (state: RootState) => state.wihtelistSlice.data.accountSize
   );
 
-  const router = useRouter();
   const [isUser, setIsUser] = useState(false);
 
   const userId = useSelector(
@@ -47,7 +47,7 @@ export default function AccountSize() {
   }, []);
 
   return (
-    <div className="w-full bg-[#131B35] p-10 grid gap-10 rounded-xl relative">
+    <div className="w-full bg-[#131B35] p-6 xs:p-10 grid gap-10 rounded-xl relative">
       <h3 className="text-[#E6F3E680] text-2xl">Account Size</h3>
 
       <div className="grid gap-5">

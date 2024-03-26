@@ -68,10 +68,10 @@ export default function Table() {
                 Email
               </th>
               <th className="py-8 bg-white px-5 whitespace-nowrap border-b border-neutral-600">
-                Region Of Residence
+                Account Type
               </th>
               <th className="py-8 bg-white px-5 whitespace-nowrap border-b border-neutral-600">
-                Account Type
+                Region Of Residence
               </th>
               <th className="py-8 bg-white px-5 whitespace-nowrap border-b border-neutral-600">
                 Preferred Platform

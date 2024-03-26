@@ -9,7 +9,7 @@ export default function Checkout() {
         Checkout
       </h2>
 
-      <div className="grid grid-cols-2 gap-10 items-start mt-20">
+      <div className="grid lg:grid-cols-2 gap-10 items-start mt-20">
         <PaymentMethods />
         <AccountSize />
       </div>
