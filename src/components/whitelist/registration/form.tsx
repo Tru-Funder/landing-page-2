@@ -12,6 +12,7 @@ import {
   setWhitelistUserDetails,
   setWhitelistUserId,
 } from "@/store/slices/whitelist";
+import SelectCountry from "./select-country";
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -35,6 +36,8 @@ export default function Form() {
       paymentInfo: {
         address: "",
         verified: false,
+        accountSize: "",
+        amountPaid: "",
       },
     });
 
@@ -81,13 +84,9 @@ export default function Form() {
           required
           className="w-full py-4 text-lg sm:text-xl text-[#E6F3E6] bg-transparent outline-none border-b border-green-300 placeholder:text-[#E6F3E6] placeholder:opacity-50"
         />
-        <input
-          type="text"
-          placeholder="Region of Residence"
-          name="regionOfResidence"
-          required
-          className="w-full py-4 text-lg sm:text-xl text-[#E6F3E6] bg-transparent outline-none border-b border-green-300 placeholder:text-[#E6F3E6] placeholder:opacity-50"
-        />
+
+        <SelectCountry />
+
         <SelectAccountType />
       </div>
 

@@ -1,12 +1,14 @@
 "use client";
 
+import { db } from "@/config/firebase";
 import { PAYMENT_METHODS } from "@/constants/payment-methods";
 import { RootState } from "@/store/index.store";
 import { Button } from "@/ui";
+import { doc, updateDoc } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function MakePayment() {
@@ -28,6 +30,22 @@ export default function MakePayment() {
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
+  };
+
+  const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+
+    const address = formData.get("address");
+
+    console.log(address);
+
+    await updateDoc(doc(db, "whitelist", userId), {
+      paymentInfo: {
+        address,
+        verified: false,
+      },
+    });
   };
 
   useEffect(() => {
@@ -68,7 +86,7 @@ export default function MakePayment() {
           </div>
         </div>
 
-        <form className="mt-10">
+        <form onSubmit={handleSubmitForm} className="mt-10">
           <div>
             <input
               type="text"
@@ -81,23 +99,21 @@ export default function MakePayment() {
               Sender’s address is compulsory to verify sender and payment.
             </p>
           </div>
-        </form>
 
-        <div className="grid gap-5 mt-20 max-w-md w-full mx-auto">
-          <div className="grid grid-flow-col justify-between">
-            <p className="text-[#E6F3E680]">Payment amount</p>
-            <p className="text-xl font-semibold">
-              ${parseInt(acountSize.registrationFee?.split("$").join("")) / 2}{" "}
-              USD
-            </p>
-          </div>
+          <div className="grid gap-5 mt-20 max-w-md w-full mx-auto">
+            <div className="grid grid-flow-col justify-between">
+              <p className="text-[#E6F3E680]">Payment amount</p>
+              <p className="text-xl font-semibold">
+                ${parseInt(acountSize.registrationFee?.split("$").join("")) / 2}{" "}
+                USD
+              </p>
+            </div>
 
-          <Link href={"/whitelist?step=confirming-payment"} className="grid">
             <Button variant="contained" className="py-4">
               I have made payment
             </Button>
-          </Link>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

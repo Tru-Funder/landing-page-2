@@ -12,5 +12,5 @@ export const PAYMENT_METHODS = {
     coin: "USDT (Bep 20)",
     address: "0x53f2869ab35129a1a9d940eefb48965a5fe9d78d",
   },
-  momo: { coin: "Momo", address: "" },
+  momo: { coin: "Momo", address: "0556010751" },
 };
