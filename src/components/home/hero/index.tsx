@@ -41,10 +41,12 @@ export default function Hero() {
               Potentials
             </h1>
 
-            <div className="grid lg:grid-flow-col gap-5 mt-12 max-w-lg mx-auto lg:mx-0">
-              <Button variant="contained" className="py-3">
-                Get Funded
-              </Button>
+            <div className="grid lg:grid-flow-col lg:w-max gap-5 mt-12 max-w-lg mx-auto lg:mx-0">
+              <Link href={"#compare-our-challenges"}>
+                <Button variant="contained" className="py-3">
+                  Get Funded
+                </Button>
+              </Link>
               <Button className="py-3">
                 <span className="block relative w-8">
                   <Image

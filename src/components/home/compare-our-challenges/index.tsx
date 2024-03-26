@@ -12,7 +12,10 @@ import Image from "next/image";
 
 export default function CompareOurChallenges() {
   return (
-    <section className="bg-[#070E2A] pt-10 lg:pt-20 pb-20 lg:pb-36 relative layout-space overflow-hidden">
+    <section
+      id="compare-our-challenges"
+      className="bg-[#070E2A] pt-10 lg:pt-20 pb-20 lg:pb-36 relative layout-space overflow-hidden"
+    >
       {/* Background Images */}
       <span className="absolute w-40 block -right-28 bottom-64 opacity-60">
         <Image

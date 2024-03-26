@@ -19,9 +19,11 @@ export default function SelectAccountType() {
         <input
           type="text"
           placeholder="Account Type"
-          disabled
+          name="accountType"
+          required
           value={value}
-          className="w-full text-lg sm:text-xl capitalize text-[#E6F3E6] bg-transparent outline-none placeholder:text-[#E6F3E6] placeholder:opacity-50"
+          readOnly
+          className="w-full cursor-default text-lg sm:text-xl capitalize text-[#E6F3E6] bg-transparent outline-none placeholder:text-[#E6F3E6] placeholder:opacity-50"
         />
 
         <button type="button" onClick={() => setIsDropDown(!isDropDown)}>

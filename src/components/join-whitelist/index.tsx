@@ -65,7 +65,7 @@ export default function JoinWhiteList() {
               within the next 96 hours
             </p>
 
-            <Link href="/whitelist-registration">
+            <Link href="/whitelist/registration">
               <Button
                 onClick={() => setIsPopUp(false)}
                 variant="contained"

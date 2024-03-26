@@ -15,7 +15,11 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-box-shadow: 0 0 0 40px #131b35 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -34,12 +38,12 @@ input[type="number"] {
   @apply px-5 md:px-10;
 }
 
-/* .custom-scroll-bar::-webkit-scrollbar {
-  @apply w-1 h-1 rounded-full bg-grey-light;
+.custom-scroll-bar::-webkit-scrollbar {
+  @apply w-1 h-1 rounded-full bg-neutral-600;
 }
 .custom-scroll-bar::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-grey-light_active;
-} */
+  @apply rounded-full bg-neutral-800;
+}
 
 @layer utilities {
   .custom-container {

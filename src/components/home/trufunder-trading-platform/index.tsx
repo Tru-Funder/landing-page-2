@@ -57,7 +57,9 @@ export default function TrufunderTradingPlatform() {
             </p>
           </div>
 
-          <Button variant="contained">Get Funded</Button>
+          <Button variant="contained" className="w-max">
+            Get Funded
+          </Button>
         </div>
       </div>
     </section>
