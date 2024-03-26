@@ -1,17 +1,45 @@
+import { db } from "@/config/firebase";
 import { PAYMENT_METHODS } from "@/constants/payment-methods";
 import { RootState } from "@/store/index.store";
 import { setWhitelistUserPaymentMethod } from "@/store/slices/whitelist";
 import { Button } from "@/ui";
+import { doc, updateDoc } from "firebase/firestore";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PaymentMethods() {
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const userId = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userId
+  );
 
   const paymentMethod = useSelector(
     (state: RootState) => state.wihtelistSlice.data.paymentMethod
   );
+
+  const accountSize = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.accountSize
+  );
+
+  const handleMakePayment = async () => {
+    await updateDoc(doc(db, "whitelist", userId), {
+      paymentInfo: {
+        address: "",
+        verified: false,
+        accountSize: accountSize.size,
+        amountPaid: `${
+          parseInt(accountSize.registrationFee.split("$").join("")) / 2
+        }
+        `,
+      },
+    });
+
+    router.push("/whitelist?step=make-payment");
+  };
 
   const handleSelectPaymentMethod = (coin: string) => {
     dispatch(setWhitelistUserPaymentMethod(coin));
@@ -49,11 +77,9 @@ export default function PaymentMethods() {
         ))}
       </div>
 
-      <Link href={"/whitelist?step=make-payment"} className="grid">
-        <Button variant="contained" className="py-4">
-          Make Payment
-        </Button>
-      </Link>
+      <Button onClick={handleMakePayment} variant="contained" className="py-4">
+        Make Payment
+      </Button>
     </div>
   );
 }

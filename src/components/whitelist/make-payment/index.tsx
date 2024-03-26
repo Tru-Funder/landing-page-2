@@ -2,6 +2,7 @@
 
 import { db } from "@/config/firebase";
 import { PAYMENT_METHODS } from "@/constants/payment-methods";
+import WelcomeEmail from "@/emails/welcome-email";
 import { RootState } from "@/store/index.store";
 import { Button } from "@/ui";
 import { doc, updateDoc } from "firebase/firestore";
@@ -38,14 +39,19 @@ export default function MakePayment() {
 
     const address = formData.get("address");
 
-    console.log(address);
-
     await updateDoc(doc(db, "whitelist", userId), {
       paymentInfo: {
         address,
         verified: false,
       },
     });
+
+    await fetch(`/api/email`, {
+      method: "POST",
+      body: JSON.stringify({}),
+    });
+
+    router.push("/whitelist?step=confirming-payment");
   };
 
   useEffect(() => {
@@ -90,7 +96,9 @@ export default function MakePayment() {
           <div>
             <input
               type="text"
-              placeholder="Address you are sending from *"
+              placeholder={`${
+                paymentMethod.coin === "Momo" ? "Account" : "Address"
+              } you are sending from *`}
               name="address"
               required
               className="w-full py-4 sm:text-lg text-[#E6F3E6] bg-transparent outline-none border-b border-green-300 placeholder:text-[#E6F3E6] placeholder:opacity-50"

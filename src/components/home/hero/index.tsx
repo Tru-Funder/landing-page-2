@@ -47,17 +47,19 @@ export default function Hero() {
                   Get Funded
                 </Button>
               </Link>
-              <Button className="py-3">
-                <span className="block relative w-8">
-                  <Image
-                    src={"/assets/discord-green-white.png"}
-                    width={50}
-                    height={50}
-                    alt="Discord Logo"
-                  />
-                </span>{" "}
-                Join Our Discord
-              </Button>
+              <Link href={"https://discord.gg/eGUCb2dVKg"}>
+                <Button className="py-3">
+                  <span className="block relative w-8">
+                    <Image
+                      src={"/assets/discord-green-white.png"}
+                      width={50}
+                      height={50}
+                      alt="Discord Logo"
+                    />
+                  </span>{" "}
+                  Join Our Discord
+                </Button>
+              </Link>
             </div>
           </div>
 

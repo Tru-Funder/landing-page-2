@@ -21,7 +21,6 @@ interface WelcomeEmailProps {
     id: number;
     Description: React.ReactNode;
   }[];
-  links?: string[];
 }
 
 const baseUrl = process.env.VERCEL_URL
@@ -79,13 +78,9 @@ const PropDefaults: WelcomeEmailProps = {
       ),
     },
   ],
-  links: ["Visit the forums", "Read the docs", "Contact an expert"],
 };
 
-export const WelcomeEmail = ({
-  steps = PropDefaults.steps,
-  links = PropDefaults.links,
-}: WelcomeEmailProps) => {
+export const WelcomeEmail = () => {
   return (
     <Html>
       <Head />
@@ -136,7 +131,7 @@ export const WelcomeEmail = ({
               </Row>
             </Section>
 
-            <ul>{steps?.map(({ Description }) => Description)}</ul>
+            <ul>{PropDefaults.steps?.map(({ Description }) => Description)}</ul>
 
             <Text className="mt-10">
               Best regards,

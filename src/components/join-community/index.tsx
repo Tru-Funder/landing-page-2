@@ -31,7 +31,7 @@ export default function JoinCommunity() {
           </p>
 
           <Link
-            href={"https://discord.gg/M73gWMTU"}
+            href={"https://discord.gg/eGUCb2dVKg"}
             target="_blank"
             className="mt-8"
           >

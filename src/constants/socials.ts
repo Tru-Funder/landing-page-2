@@ -7,7 +7,7 @@ export const SOCIALS = [
   {
     alt: "Discord Icon",
     icon_url: "/assets/blue-white-discord.svg",
-    url: "https://discord.gg/M73gWMTU",
+    url: "https://discord.gg/eGUCb2dVKg",
   },
   {
     alt: "Telegram Icon",
