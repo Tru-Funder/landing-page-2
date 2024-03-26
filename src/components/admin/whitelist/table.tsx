@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { auth, db } from "@/config/firebase";
 import { Button } from "@/ui";
 import { useSelector } from "react-redux";
@@ -22,6 +22,15 @@ export default function Table() {
     });
 
     setList(listArr);
+  };
+
+  const handleAccountVerification = async (user: Record<string, any>) => {
+    await updateDoc(doc(db, "whitelist", user.email), {
+      paymentInfo: {
+        address: user.paymentInfo.address,
+        verified: true,
+      },
+    });
   };
 
   useEffect(() => {
@@ -93,19 +102,69 @@ export default function Table() {
                   {user.regionOfResidence}
                 </td>
                 <td className="py-8 px-5 bg-neutral-400 border-neutral-600 whitespace-nowrap capitalize">
-                  {user.preferredPlatform}
+                  {user.preferredPlatform === "MT4" ? (
+                    <div className="grid grid-cols-[auto_1fr] text-xs w-full rounded-lg py-2 px-3 bg-[#B0DAB2] font-medium items-center gap-4">
+                      <span className="block relative w-5">
+                        <Image
+                          src={"/assets/meta-trader-4.png"}
+                          width={100}
+                          height={100}
+                          alt="MetaTrader 4 Logo"
+                        />
+                      </span>
+                      <p>MetaTrader 4</p>
+                    </div>
+                  ) : user.preferredPlatform === "MT5" ? (
+                    <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 text-xs bg-[#FED202] font-medium items-center gap-4">
+                      <span className="block relative w-5">
+                        <Image
+                          src={"/assets/meta-trader-5.png"}
+                          width={100}
+                          height={100}
+                          alt="MetaTrader 5 Logo"
+                        />
+                      </span>
+                      <p>MetaTrader 5</p>
+                    </div>
+                  ) : (
+                    user.preferredPlatform === "CT" && (
+                      <div className="grid grid-cols-[auto_1fr] w-full rounded-lg text-xs py-2 px-3 bg-[#2F61DF] text-white font-medium items-center gap-4">
+                        <span className="block relative w-5">
+                          <Image
+                            src={"/assets/c-trader.png"}
+                            width={100}
+                            height={100}
+                            alt="C Trader Logo"
+                          />
+                        </span>
+                        <p>C Trader</p>
+                      </div>
+                    )
+                  )}
                 </td>
                 <td className="py-8 px-5 bg-neutral-400 border-neutral-600 whitespace-nowrap">
-                  {user.paymentInfo?.address}
+                  {user.paymentInfo?.address ? user.paymentInfo?.address : "-"}
                 </td>
                 <td className="py-8 px-5 bg-neutral-400 border-neutral-600 whitespace-nowrap">
-                  {user.payment?.verified ? "Verified" : "Not Verified"}
+                  <span
+                    className={`block py-2 px-5 border rounded-lg text-center text-white text-xs ${
+                      user.paymentInfo?.verified
+                        ? "border-green-300 text-green-600 bg-green-50"
+                        : "border-yellow-300 text-yellow-600 bg-yellow-50"
+                    }`}
+                  >
+                    {user.paymentInfo?.verified ? "Confirmed" : "Pending"}
+                  </span>
                 </td>
 
-                {!user.payment?.verified && (
+                {!user.paymentInfo?.verified && (
                   <td className="border-neutral-600 bg-neutral-400 py-8 px-5">
-                    <Button variant="contained" className="whitespace-nowrap">
-                      Verify Account
+                    <Button
+                      onClick={() => handleAccountVerification(user)}
+                      variant="contained"
+                      className="whitespace-nowrap text-xs"
+                    >
+                      confirm
                     </Button>
                   </td>
                 )}

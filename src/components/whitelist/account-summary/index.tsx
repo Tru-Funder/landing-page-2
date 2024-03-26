@@ -5,31 +5,36 @@ import { RootState } from "@/store/index.store";
 import { Button } from "@/ui";
 import { doc, getDoc } from "firebase/firestore";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function AccountSummary() {
   const router = useRouter();
-  const [account, setAccount] = useState<null | "" | Record<string, any>>(null);
-  const email = useSelector(
-    (state: RootState) => state.wihtelistSlice.data.email
+  const [isUser, setIsUser] = useState(false);
+
+  const userId = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userId
   );
 
-  const getAccountSummary = async () => {
-    const docRef = doc(db, "whitelist", email || "no-email");
+  const userDetails = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userDetails
+  );
+
+  const getUser = async () => {
+    const docRef = doc(db, "whitelist", userId || "no-ID");
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log(docSnap.data());
-      setAccount(docSnap.data());
+      setIsUser(true);
     } else {
       router.push("/whitelist?step=registration");
     }
   };
 
   useEffect(() => {
-    getAccountSummary();
+    getUser();
   }, []);
 
   return (
@@ -48,39 +53,39 @@ export default function AccountSummary() {
           </p>
         </div>
 
-        {account ? (
+        {userDetails ? (
           <div className="mt-10 text-lg sm:text-xl grid justify-center sm:justify-items-center gap-5">
             {/* Full Name */}
             <div className="grid sm:grid-flow-col w-max sm:gap-5 items-center">
               <p className="font-semibold">Full Name:</p>
-              <p className="opacity-80">{account.fullName}</p>
+              <p className="opacity-80">{userDetails.fullName}</p>
             </div>
 
             {/* Email */}
             <div className="grid sm:grid-flow-col w-max sm:gap-5 items-center">
               <p className="font-semibold">Email:</p>
-              <p className="opacity-80">{account.email}</p>
+              <p className="opacity-80">{userDetails.email}</p>
             </div>
 
             {/* Region Of Residence */}
             <div className="grid sm:grid-flow-col w-max sm:gap-5 items-center">
               <p className="font-semibold">Region Of Residence :</p>
               <p className="opacity-80 break-words">
-                {account.regionOfResidence}
+                {userDetails.regionOfResidence}
               </p>
             </div>
 
             {/* Account Type */}
             <div className="grid sm:grid-flow-col w-max sm:gap-5 items-center">
               <p className="font-semibold">Account Type:</p>
-              <p className="opacity-80 capitalize">{account.accountType}</p>
+              <p className="opacity-80 capitalize">{userDetails.accountType}</p>
             </div>
 
             {/* Preferred Account */}
             <div className="grid sm:grid-flow-col w-max sm:gap-5 items-center">
               <p className="font-semibold">Preferred Account:</p>
               <div className="mt-3 sm:mt-0">
-                {account.preferredPlatform === "MT4" ? (
+                {userDetails.preferredPlatform === "MT4" ? (
                   <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-3 px-4 bg-[#B0DAB2] font-medium items-center gap-4">
                     <span className="block relative w-8">
                       <Image
@@ -92,7 +97,7 @@ export default function AccountSummary() {
                     </span>
                     <p>MetaTrader 4</p>
                   </div>
-                ) : account.preferredPlatform === "MT5" ? (
+                ) : userDetails.preferredPlatform === "MT5" ? (
                   <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-3 px-4 bg-[#FED202] font-medium items-center gap-4">
                     <span className="block relative w-8">
                       <Image
@@ -105,7 +110,7 @@ export default function AccountSummary() {
                     <p>MetaTrader 5</p>
                   </div>
                 ) : (
-                  account.preferredPlatform === "CT" && (
+                  userDetails.preferredPlatform === "CT" && (
                     <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-3 px-4 bg-[#2F61DF] text-white font-medium items-center gap-4">
                       <span className="block relative w-8">
                         <Image
@@ -128,12 +133,14 @@ export default function AccountSummary() {
           </div>
         )}
 
-        <Button
-          variant="contained"
-          className="w-full sm:w-max sm:mx-auto mt-16 sm:mt-20 text-xl py-3 px-8"
-        >
-          Proceed to checkout
-        </Button>
+        <Link href={"/whitelist?step=checkout"}>
+          <Button
+            variant="contained"
+            className="w-full sm:w-max sm:mx-auto mt-16 sm:mt-20 text-xl py-3 px-8"
+          >
+            Proceed to checkout
+          </Button>
+        </Link>
       </div>
     </div>
   );

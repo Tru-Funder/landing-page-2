@@ -1,10 +1,15 @@
 import { Button } from "@/ui";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 export default function JoinWhiteList() {
+  const path = usePathname();
   const [isPopUp, setIsPopUp] = useState(true);
+
+  if (path === "/whitelist") return;
+
   return (
     <div
       className={`fixed top-0 left-0 w-full layout-space h-screen  content-center justify-center bg-[rgba(0,0,0,0.8)] transition-all ${
@@ -65,7 +70,7 @@ export default function JoinWhiteList() {
               within the next 96 hours
             </p>
 
-            <Link href="/whitelist/registration">
+            <Link href="/whitelist">
               <Button
                 onClick={() => setIsPopUp(false)}
                 variant="contained"

@@ -7,8 +7,11 @@ import { doc, setDoc } from "firebase/firestore";
 import { Button } from "@/ui";
 import { db } from "@/config/firebase";
 import { useDispatch } from "react-redux";
-import { setWhitelistEmail } from "@/store/slices/whitelist";
 import { useRouter } from "next/navigation";
+import {
+  setWhitelistUserDetails,
+  setWhitelistUserId,
+} from "@/store/slices/whitelist";
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -35,7 +38,17 @@ export default function Form() {
       },
     });
 
-    dispatch(setWhitelistEmail(email));
+    dispatch(setWhitelistUserId(email));
+
+    dispatch(
+      setWhitelistUserDetails({
+        fullName,
+        email,
+        regionOfResidence,
+        accountType,
+        preferredPlatform,
+      })
+    );
     router.push("/whitelist?step=account-summary");
   };
 

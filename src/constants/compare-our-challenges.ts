@@ -2,7 +2,7 @@ import { AccountType } from "@/@Types/challenges";
 
 export const CHALLENGES: AccountType[] = [
   {
-    accountType: "Evaluation",
+    accountType: "evaluation",
     accountSizes: [
       {
         size: "$5k",
@@ -147,7 +147,7 @@ export const CHALLENGES: AccountType[] = [
     ],
   },
   {
-    accountType: "Express",
+    accountType: "express",
     accountSizes: [
       {
         size: "$5k",
@@ -212,7 +212,7 @@ export const CHALLENGES: AccountType[] = [
     ],
   },
   {
-    accountType: "One-Step",
+    accountType: "one-step",
     accountSizes: [
       {
         size: "$5k",

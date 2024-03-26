@@ -3,13 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialStateProps {
   data: {
-    email: string;
+    userId: string;
+    userDetails: Record<string, any>;
+    paymentMethod: string;
+    accountSize: Record<string, any>;
   };
 }
 
 const initialState: InitialStateProps = {
   data: {
-    email: "",
+    userId: "",
+    userDetails: {},
+    paymentMethod: "",
+    accountSize: {},
   },
 };
 
@@ -17,13 +23,33 @@ const wihtelistSlice = createSlice({
   name: "wihtelistSlice",
   initialState,
   reducers: {
-    setWhitelistEmail: (state, action) => ({
+    setWhitelistUserId: (state, action) => ({
       ...state,
-      data: { ...state.data, email: action.payload },
+      data: { ...state.data, userId: action.payload },
+    }),
+
+    setWhitelistUserDetails: (state, action) => ({
+      ...state,
+      data: { ...state.data, userDetails: action.payload },
+    }),
+
+    setWhitelistUserPaymentMethod: (state, action) => ({
+      ...state,
+      data: { ...state.data, paymentMethod: action.payload },
+    }),
+
+    setWhitelistUserAccountSize: (state, action) => ({
+      ...state,
+      data: { ...state.data, accountSize: action.payload },
     }),
   },
 });
 
-export const { setWhitelistEmail } = wihtelistSlice.actions;
+export const {
+  setWhitelistUserId,
+  setWhitelistUserDetails,
+  setWhitelistUserPaymentMethod,
+  setWhitelistUserAccountSize,
+} = wihtelistSlice.actions;
 
 export default wihtelistSlice;

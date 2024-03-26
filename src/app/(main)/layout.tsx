@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import JoinCommunity from "@/components/join-community";
 import React from "react";
 
 interface MainLayoutProps {
@@ -11,6 +12,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <div>
       <Header />
       {children}
+      <JoinCommunity />
       <Footer />
     </div>
   );
