@@ -127,10 +127,17 @@ export default function MakePayment() {
           <div className="grid gap-5 mt-20 max-w-md w-full mx-auto">
             <div className="grid grid-flow-col justify-between">
               <p className="text-[#E6F3E680]">Payment amount</p>
-              <p className="text-xl font-semibold">
-                ${parseInt(acountSize.registrationFee?.split("$").join("")) / 2}{" "}
-                USD
-              </p>
+              <div>
+                <p className="text-xl font-semibold">
+                  $
+                  {parseInt(acountSize.registrationFee?.split("$").join("")) /
+                    2}{" "}
+                  USD
+                </p>
+                {paymentMethod.coin === "Momo" && (
+                  <p className="text-sm">Rate: 12.5 </p>
+                )}
+              </div>
             </div>
 
             <Button variant="contained" className="py-4">
