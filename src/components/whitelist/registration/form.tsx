@@ -50,6 +50,12 @@ export default function Form() {
         regionOfResidence,
         accountType,
         preferredPlatform,
+        paymentInfo: {
+          address: "",
+          verified: false,
+          accountSize: "",
+          amountPaid: "",
+        },
       })
     );
     router.push("/whitelist?step=account-summary");

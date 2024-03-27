@@ -16,75 +16,80 @@ import {
 import { Tailwind } from "@react-email/tailwind";
 import * as React from "react";
 
-interface WelcomeEmailProps {
+interface DefaultsProps {
   steps?: {
     id: number;
     Description: React.ReactNode;
   }[];
 }
 
+interface WelcomeEmailProps {
+  userData: Record<string, any>;
+}
+
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
 
-const PropDefaults: WelcomeEmailProps = {
-  steps: [
-    {
-      id: 1,
-      Description: (
-        <li className="mb-20" key={1}>
-          <strong>Full Name:</strong> Sammy Jackson.
-        </li>
-      ),
-    },
-    {
-      id: 2,
-      Description: (
-        <li className="mb-20" key={2}>
-          <strong>Email:</strong> sammyJackson@gmail.com.
-        </li>
-      ),
-    },
-    {
-      id: 3,
-      Description: (
-        <li className="mb-20" key={3}>
-          <strong>Country:</strong> America.
-        </li>
-      ),
-    },
-    {
-      id: 4,
-      Description: (
-        <li className="mb-20" key={4}>
-          <strong>Amount Paid</strong> $500.
-        </li>
-      ),
-    },
-    {
-      id: 5,
-      Description: (
-        <li className="mb-20" key={4}>
-          <strong>Account Size</strong> $500.
-        </li>
-      ),
-    },
-    {
-      id: 6,
-      Description: (
-        <li className="mb-20" key={4}>
-          <strong>Preferred Trading Platform</strong> $500.
-        </li>
-      ),
-    },
-  ],
-};
+export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
+  const PropDefaults: DefaultsProps = {
+    steps: [
+      {
+        id: 1,
+        Description: (
+          <li className="mb-20" key={1}>
+            <strong>Full Name:</strong> {userData.fullName}
+          </li>
+        ),
+      },
+      {
+        id: 2,
+        Description: (
+          <li className="mb-20" key={2}>
+            <strong>Email:</strong> {userData.email}
+          </li>
+        ),
+      },
+      {
+        id: 3,
+        Description: (
+          <li className="mb-20" key={3}>
+            <strong>Country:</strong> {userData.regionOfResidence}
+          </li>
+        ),
+      },
+      {
+        id: 4,
+        Description: (
+          <li className="mb-20" key={4}>
+            <strong>Amount Paid</strong> {userData.paymentInfo.amountPaid}
+          </li>
+        ),
+      },
+      {
+        id: 5,
+        Description: (
+          <li className="mb-20" key={4}>
+            <strong>Account Size</strong> {userData.paymentInfo.acountSize}
+          </li>
+        ),
+      },
+      {
+        id: 6,
+        Description: (
+          <li className="mb-20" key={4}>
+            <strong>Preferred Trading Platform</strong>{" "}
+            {userData.preferredPlatform}
+          </li>
+        ),
+      },
+    ],
+  };
 
-export const WelcomeEmail = () => {
   return (
     <Html>
       <Head />
-      <Preview>Netlify Welcome</Preview>
+      <Preview>TruFunder Welcome</Preview>
       <Tailwind
         config={{
           theme: {
@@ -118,9 +123,9 @@ export const WelcomeEmail = () => {
             <Section>
               <Row>
                 <Text className="text-base">
-                  Dear [User&apos;s Full Name], Thank you for choosing Tru
-                  Funder for your funded trading account needs. We have received
-                  your purchase request through our whitelist and are currently
+                  Dear {userData.fullName}, Thank you for choosing Tru Funder
+                  for your funded trading account needs. We have received your
+                  purchase request through our whitelist and are currently
                   reviewing it. Your interest in joining our platform is greatly
                   appreciated.
                 </Text>

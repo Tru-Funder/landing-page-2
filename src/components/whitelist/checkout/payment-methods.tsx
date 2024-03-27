@@ -1,7 +1,10 @@
 import { db } from "@/config/firebase";
 import { PAYMENT_METHODS } from "@/constants/payment-methods";
 import { RootState } from "@/store/index.store";
-import { setWhitelistUserPaymentMethod } from "@/store/slices/whitelist";
+import {
+  setWhitelistUserDetails,
+  setWhitelistUserPaymentMethod,
+} from "@/store/slices/whitelist";
 import { Button } from "@/ui";
 import { doc, updateDoc } from "firebase/firestore";
 import Link from "next/link";
@@ -17,6 +20,10 @@ export default function PaymentMethods() {
     (state: RootState) => state.wihtelistSlice.data.userId
   );
 
+  const userDetails = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userDetails
+  );
+
   const paymentMethod = useSelector(
     (state: RootState) => state.wihtelistSlice.data.paymentMethod
   );
@@ -28,8 +35,7 @@ export default function PaymentMethods() {
   const handleMakePayment = async () => {
     await updateDoc(doc(db, "whitelist", userId), {
       paymentInfo: {
-        address: "",
-        verified: false,
+        ...userDetails.paymentInfo,
         accountSize: accountSize.size,
         amountPaid: `${
           parseInt(accountSize.registrationFee.split("$").join("")) / 2
@@ -37,6 +43,19 @@ export default function PaymentMethods() {
         `,
       },
     });
+
+    dispatch(
+      setWhitelistUserDetails({
+        ...userDetails,
+        paymentInfo: {
+          ...userDetails.paymentInfo,
+          accountSize: accountSize.size,
+          amountPaid: `${
+            parseInt(accountSize.registrationFee.split("$").join("")) / 2
+          }`,
+        },
+      })
+    );
 
     router.push("/whitelist?step=make-payment");
   };

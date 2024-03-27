@@ -26,7 +26,6 @@ export default function AccountSize() {
   const [accountType, setaccountType] = useState(0);
 
   const handleSelectAccountSize = (size: Record<string, any>) => {
-    console.log(accountSize);
     dispatch(setWhitelistUserAccountSize(size));
   };
 

@@ -90,7 +90,7 @@ export default function AccountSummary() {
             {/* Preferred Account */}
             <div className="grid sm:grid-flow-col w-max sm:gap-5 items-center">
               <p className="font-semibold">Preferred Account:</p>
-              <div className="mt-3 sm:mt-0">
+              <div className="mt-3 text-black text-sm sm:mt-0">
                 {userDetails.preferredPlatform === "MT4" ? (
                   <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 bg-[#B0DAB2] font-medium items-center gap-2">
                     <span className="block relative w-6">
@@ -105,7 +105,7 @@ export default function AccountSummary() {
                   </div>
                 ) : userDetails.preferredPlatform === "MT5" ? (
                   <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 bg-[#FED202] font-medium items-center gap-2">
-                    <span className="block relative w-8">
+                    <span className="block relative w-6">
                       <Image
                         src={"/assets/meta-trader-5.png"}
                         width={100}
@@ -117,8 +117,8 @@ export default function AccountSummary() {
                   </div>
                 ) : (
                   userDetails.preferredPlatform === "CT" && (
-                    <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 bg-[#2F61DF] text-white font-medium items-center gap-2">
-                      <span className="block relative w-8">
+                    <div className="grid grid-cols-[auto_1fr] w-full rounded-lg py-2 px-3 bg-[#2F61DF] font-medium items-center gap-2">
+                      <span className="block relative w-6">
                         <Image
                           src={"/assets/c-trader.png"}
                           width={100}

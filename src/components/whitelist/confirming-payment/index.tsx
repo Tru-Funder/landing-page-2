@@ -14,6 +14,10 @@ export default function ConfirmingPayment() {
     (state: RootState) => state.wihtelistSlice.data.userId
   );
 
+  const userDetails = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userDetails
+  );
+
   const [time, setTime] = useState({ minutes: 15, seconds: 0 });
 
   useEffect(() => {

@@ -4,21 +4,27 @@ import { db } from "@/config/firebase";
 import { PAYMENT_METHODS } from "@/constants/payment-methods";
 import WelcomeEmail from "@/emails/welcome-email";
 import { RootState } from "@/store/index.store";
+import { setWhitelistUserDetails } from "@/store/slices/whitelist";
 import { Button } from "@/ui";
 import { doc, updateDoc } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function MakePayment() {
+  const dispatch = useDispatch();
   const router = useRouter();
 
   const [paymentMethod, setPaymentMethod] = useState<Record<string, any>>({});
 
   const userId = useSelector(
     (state: RootState) => state.wihtelistSlice.data.userId
+  );
+
+  const userDetails = useSelector(
+    (state: RootState) => state.wihtelistSlice.data.userDetails
   );
 
   const method = useSelector(
@@ -41,14 +47,24 @@ export default function MakePayment() {
 
     await updateDoc(doc(db, "whitelist", userId), {
       paymentInfo: {
+        ...userDetails.paymentInfo,
         address,
-        verified: false,
       },
     });
 
+    dispatch(
+      setWhitelistUserDetails({
+        ...userDetails,
+        paymentInfo: {
+          ...userDetails.paymentInfo,
+          address,
+        },
+      })
+    );
+
     await fetch(`/api/email`, {
       method: "POST",
-      body: JSON.stringify({}),
+      body: JSON.stringify({ userDetails }),
     });
 
     router.push("/whitelist?step=confirming-payment");
