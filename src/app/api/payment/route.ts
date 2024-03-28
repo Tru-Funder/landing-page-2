@@ -1,7 +1,7 @@
 import WelcomeEmail from "@/emails/welcome-email";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const resend = new Resend("re_7xp4xPQr_6XKiHMMYxH2JqCdNP1QFaQSG");
 
 export async function POST(request: Request) {
   const userData = await request.json();
