@@ -62,9 +62,9 @@ export default function MakePayment() {
       })
     );
 
-    await fetch(`/api/email`, {
+    await fetch(`/api/payment`, {
       method: "POST",
-      body: JSON.stringify({ userDetails }),
+      body: JSON.stringify(userDetails),
     });
 
     router.push("/whitelist?step=confirming-payment");

@@ -46,6 +46,11 @@ export default function Table() {
       },
     });
 
+    await fetch(`/api/confirm`, {
+      method: "POST",
+      body: JSON.stringify(account),
+    });
+
     dispatch(setAdminWhitelist(listArr));
   };
 

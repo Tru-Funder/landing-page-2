@@ -29,7 +29,7 @@ export default function Form() {
 
     await setDoc(doc(db, "whitelist", email), {
       fullName,
-      email,
+      email: email.toLowerCase(),
       regionOfResidence,
       accountType,
       preferredPlatform,

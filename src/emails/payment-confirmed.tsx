@@ -1,7 +1,5 @@
 import {
   Body,
-  Button,
-  Column,
   Container,
   Head,
   Heading,
@@ -26,7 +24,7 @@ interface WelcomeEmailProps {
   userData: Record<string, any>;
 }
 
-export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
+export const PaymentConfirmed = ({ userData }: WelcomeEmailProps) => {
   const PropDefaults: DefaultsProps = {
     steps: [
       {
@@ -84,7 +82,7 @@ export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>TruFunder Welcome</Preview>
+      <Preview>Payment Confirmed</Preview>
       <Tailwind
         config={{
           theme: {
@@ -112,8 +110,8 @@ export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
           />
 
           <Container className="bg-white py-10 px-5">
-            <Heading className="text-center my-0 leading-8">
-              Welcome to TruFunder
+            <Heading className="text-center text-xl my-0 leading-8">
+              Payment Confirmation for TruFunder Account
             </Heading>
 
             <Section>
@@ -123,20 +121,14 @@ export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
                 </Text>
 
                 <Text className="text-base">
-                  Thank you for choosing TruFunder for your funded trading
-                  account needs. We appreciate your interest in joining our
-                  platform.
+                  We hope this email finds you well. We are writing to confirm
+                  the successful receipt of your payment for your TruFunder
+                  account. Your commitment to trading with us is greatly
+                  appreciated.
                 </Text>
 
                 <Text className="text-base">
-                  We have received your purchase request through our whitelist
-                  and are currently reviewing it. Please expect a response from
-                  us within 15 minutes. Your patience during this process is
-                  greatly appreciated.{" "}
-                </Text>
-
-                <Text className="text-base">
-                  Here are the details of your purchase request:
+                  Below are the details of your payment:
                 </Text>
               </Row>
             </Section>
@@ -144,14 +136,29 @@ export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
             <ul>{PropDefaults.steps?.map(({ Description }) => Description)}</ul>
 
             <Text className="text-base">
-              Should we require any additional information or if you have any
-              questions, please do not hesitate to contact us at
-              support@trufunder.co
+              Please note that while your payment has been received, our
+              platform is still under development. As you are on our whitelist,
+              rest assured that your spot is reserved, and you will be among the
+              first to access the platform once it is ready.
             </Text>
 
             <Text className="text-base">
-              Thank you again for choosing TruFunder. We look forward to
-              potentially welcoming you to our platform.
+              We are diligently working on the development process to ensure a
+              seamless experience for our users. We will notify you as soon as
+              the platform is live and ready for you to start utilizing it for
+              your trading needs.
+            </Text>
+
+            <Text className="text-base">
+              If you have any questions or require further assistance, please
+              feel free to reach out to our customer support team at
+              support@trufunder.co We&apos;re here to help.
+            </Text>
+
+            <Text className="text-base">
+              Thank you once again for choosing TruFunder. We look forward to
+              providing you with an exceptional trading experience once our
+              platform is launched.
             </Text>
 
             <Text className="mt-10">
@@ -166,4 +173,4 @@ export const WelcomeEmail = ({ userData }: WelcomeEmailProps) => {
   );
 };
 
-export default WelcomeEmail;
+export default PaymentConfirmed;
