@@ -226,7 +226,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -246,7 +246,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -266,7 +266,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -286,7 +286,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -306,7 +306,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -326,7 +326,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -346,7 +346,7 @@ export const CHALLENGES: AccountType[] = [
           salaryPerMonth: "0%",
         },
         liveSimulation: {
-          profitTarget: "80%",
+          profitTarget: "10%",
           dailyDrawdown: "3%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
