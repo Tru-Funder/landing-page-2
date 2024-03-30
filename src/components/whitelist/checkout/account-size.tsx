@@ -13,8 +13,6 @@ export default function AccountSize() {
     (state: RootState) => state.wihtelistSlice.data.accountSize
   );
 
-  const [isUser, setIsUser] = useState(false);
-
   const userId = useSelector(
     (state: RootState) => state.wihtelistSlice.data.userId
   );
@@ -26,7 +24,10 @@ export default function AccountSize() {
   const [accountType, setaccountType] = useState(0);
 
   const handleSelectAccountSize = (size: Record<string, any>) => {
-    dispatch(setWhitelistUserAccountSize(size));
+    if (size) {
+      dispatch(setWhitelistUserAccountSize(size));
+      return;
+    }
   };
 
   useEffect(() => {
@@ -34,15 +35,17 @@ export default function AccountSize() {
       router.push("/whitelist");
     }
 
-    userDetails.accountType === "evaluation"
-      ? setaccountType(0)
-      : userDetails.accountType === "express"
-      ? setaccountType(1)
-      : setaccountType(2);
+    let acctType;
 
-    dispatch(
-      setWhitelistUserAccountSize(CHALLENGES[accountType].accountSizes[0])
-    );
+    userDetails.accountType === "evaluation"
+      ? (acctType = 0)
+      : userDetails.accountType === "express"
+      ? (acctType = 1)
+      : (acctType = 2);
+
+    setaccountType(acctType);
+
+    dispatch(setWhitelistUserAccountSize(CHALLENGES[acctType].accountSizes[0]));
   }, []);
 
   return (
