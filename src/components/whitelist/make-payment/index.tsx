@@ -135,7 +135,7 @@ export default function MakePayment() {
                   USD
                 </p>
                 {paymentMethod.coin === "Momo" && (
-                  <p className="text-sm">Rate: 12.5 </p>
+                  <p className="text-sm">Rate: 12.5</p>
                 )}
               </div>
             </div>
