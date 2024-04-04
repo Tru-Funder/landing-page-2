@@ -153,7 +153,7 @@ export const CHALLENGES: AccountType[] = [
         size: "$5k",
         registrationFee: "$200",
         tradingChallenge: {
-          profitTarget: "10%",
+          profitTarget: "none",
           dailyDrawdown: "5%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -163,7 +163,7 @@ export const CHALLENGES: AccountType[] = [
         size: "$10k",
         registrationFee: "$400",
         tradingChallenge: {
-          profitTarget: "10%",
+          profitTarget: "none",
           dailyDrawdown: "5%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -173,7 +173,7 @@ export const CHALLENGES: AccountType[] = [
         size: "$25k",
         registrationFee: "$850",
         tradingChallenge: {
-          profitTarget: "10%",
+          profitTarget: "none",
           dailyDrawdown: "5%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -183,7 +183,7 @@ export const CHALLENGES: AccountType[] = [
         size: "$50k",
         registrationFee: "$1900",
         tradingChallenge: {
-          profitTarget: "10%",
+          profitTarget: "none",
           dailyDrawdown: "5%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -193,7 +193,7 @@ export const CHALLENGES: AccountType[] = [
         size: "$100k",
         registrationFee: "$3800",
         tradingChallenge: {
-          profitTarget: "10%",
+          profitTarget: "none",
           dailyDrawdown: "5%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -203,7 +203,7 @@ export const CHALLENGES: AccountType[] = [
         size: "$200k",
         registrationFee: "$7200",
         tradingChallenge: {
-          profitTarget: "10%",
+          profitTarget: "none",
           dailyDrawdown: "5%",
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
@@ -223,7 +223,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -231,7 +231,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
       {
@@ -243,7 +243,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -251,7 +251,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
       {
@@ -263,7 +263,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -271,7 +271,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
       {
@@ -283,7 +283,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -291,7 +291,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
       {
@@ -303,7 +303,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -311,7 +311,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
       {
@@ -323,7 +323,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -331,7 +331,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
       {
@@ -343,7 +343,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "80/20",
-          salaryPerMonth: "0%",
+          salaryPerMonth: "0.5%",
         },
         liveSimulation: {
           profitTarget: "10%",
@@ -351,7 +351,7 @@ export const CHALLENGES: AccountType[] = [
           totalDrawdown: "6%",
           timeLimit: "Zero Limit",
           payout: "14 Days",
-          salaryPerMonth: "1%",
+          salaryPerMonth: "0.5%",
         },
       },
     ],
