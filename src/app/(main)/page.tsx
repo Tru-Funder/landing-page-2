@@ -15,7 +15,6 @@ export default function Page() {
       <TrufunderChallengeTypes />
       <CompareOurChallenges />
       {/* <TradeOurProducts /> */}
-      <JoinCommunity />
     </main>
   );
 }
